@@ -18,15 +18,15 @@ export default function ParralaxBackground() {
           start: "top top",
           end: "bottom top",
           scrub: true,
-          markers:true
+          // markers: true,
         },
       });
 
-      gsap.utils.toArray(".kibouge").forEach((layer) => {
-        const speed = layer.dataset.speed;
-        const movement = -(layer.offsetHeight * speed);
-        tl.to(layer, { y: movement, ease: "none" }, 0);
-      });
+      // gsap.utils.toArray(".kibouge").forEach((layer) => {
+      //   const speed = layer.dataset.speed;
+      //   const movement = -(layer.offsetHeight * speed);
+      //   tl.to(layer, { y: movement, ease: "none" }, 0);
+      // });
     });
 
     return () => ctx.revert();
@@ -39,12 +39,12 @@ export default function ParralaxBackground() {
         src="/siteWeb1/brownCircle.png"
         height={"50px"}
         width={"50px"}
-        className="position-fixed kibouge"
+        className="position-absolute kibouge"
         style={{
           transform: "scale(2)",
           left: "10vh",
-          top:"15vh",
-          zIndex:"100"
+          top: "25vh",
+          zIndex: "9",
         }}
         data-speed="0.6"
       />
@@ -53,12 +53,13 @@ export default function ParralaxBackground() {
         src="/siteWeb1/brownSquare.png"
         height={"50px"}
         width={"50px"}
-        className="position-fixed kibouge"
+        className="position-absolute kibouge"
         data-speed="0.6"
         style={{
           transform: "rotate(45deg) scale(2)",
           right: "10vh",
           top: "20vh",
+          zIndex: "9",
         }}
       />
       {/* <img
@@ -80,12 +81,13 @@ export default function ParralaxBackground() {
         src="/siteWeb1/darkBrownSquare.png"
         height={"50px"}
         width={"50px"}
-        className="position-fixed kibouge"
+        className="position-absolute kibouge"
         data-speed="0.9"
         style={{
           transform: "rotate(5deg) scale(3)",
           right: "-5vh",
           bottom: "20vh",
+          zIndex: "9",
         }}
       />
       <img
@@ -93,13 +95,43 @@ export default function ParralaxBackground() {
         src="/siteWeb1/darkBrownSquare.png"
         height={"50px"}
         width={"50px"}
-        className="position-fixed kibouge"
+        className="position-absolute kibouge"
         data-speed="0.3"
         style={{
           transform: "rotate(5deg) scale(1)",
           right: "50vh",
           top: "10vh",
-          zIndex:"100"
+          zIndex: "9",
+        }}
+      />
+
+      <img
+        // ref={ref3}
+        src="/siteWeb1/darkBrownSquare.png"
+        height={"50px"}
+        width={"50px"}
+        className="position-absolute kibouge"
+        data-speed="0.9"
+        style={{
+          transform: "rotate(35deg) scale(3)",
+          right: "0vh",
+          top: "140vh",
+          zIndex: "9",
+        }}
+      />
+
+      <img
+        // ref={ref3}
+        src="/siteWeb1/darkBrownSquare.png"
+        height={"50px"}
+        width={"50px"}
+        className="position-absolute kibouge"
+        data-speed="0.3"
+        style={{
+          transform: "rotate(10deg) scale(0.5)",
+          left: "5vh",
+          top: "80vh",
+          zIndex: "9",
         }}
       />
     </>
@@ -107,7 +139,6 @@ export default function ParralaxBackground() {
 }
 
 export function TimelinePart2() {
-
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".card1",
@@ -154,44 +185,63 @@ export function TimelinePart2() {
     },
   });
 
-  tlJauge.fromTo(".jauge div:nth-child(1)", {
-    opacity: 0,
-  },
-  {
-    opacity: 1,
-    // backgroundColor:"red",
-    duration:"0.5"
-  },">0.5");
+  tlJauge.fromTo(
+    ".jauge div:nth-child(1)",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      // backgroundColor:"red",
+      duration: "0.5",
+    },
+    ">0.5"
+  );
 
-  tlJauge.fromTo(".jauge div:nth-child(2)", {
-    opacity: 0,
-  },{
-    opacity: 1,
-    backgroundColor:"red",
-    duration:"1"
-  },">0.5");
+  tlJauge.fromTo(
+    ".jauge div:nth-child(2)",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      backgroundColor: "red",
+      duration: "1",
+    },
+    ">0.5"
+  );
 
-  tlJauge.fromTo(".jauge div:nth-child(3)",{
-    opacity: 0,
-  }, {
-    opacity: 1,
-    backgroundColor:"red",
-    duration:"3"
-  },">0.5");
+  tlJauge.fromTo(
+    ".jauge div:nth-child(3)",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      backgroundColor: "red",
+      duration: "3",
+    },
+    ">0.5"
+  );
 
-  tlJauge.fromTo(".jauge div:nth-child(4)",{
-    opacity: 0,
-  }, {
-    opacity: 1,
-    backgroundColor:"red"
-  },">0.5");
+  tlJauge.fromTo(
+    ".jauge div:nth-child(4)",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      backgroundColor: "red",
+    },
+    ">0.5"
+  );
 
   tl.fromTo(
     ".card1 div",
     {
       opacity: 0,
       y: "150px",
-      duration:"3"
+      duration: "3",
     },
     {
       opacity: 1,
@@ -206,7 +256,7 @@ export function TimelinePart2() {
     {
       opacity: 0,
       y: "150px",
-      duration:"3"
+      duration: "3",
     },
     {
       opacity: 1,

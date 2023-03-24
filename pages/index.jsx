@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
-import gsap, { Power3 } from "gsap";
+import gsap from "gsap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import { LoremIpsum } from "lorem-ipsum";
 
 import ParralaxBackground, {
   TimelinePart2,
@@ -10,25 +8,34 @@ import ParralaxBackground, {
 import Part2 from "../siteWeb1/Part2";
 const Home = () => {
   const mouse = useRef(null);
+  // const caca = useRef(false);
+  // const scrolll = useRef(0);
 
-  const [state, setState] = useState(false);
+  const textte = [
+    "aliqua id dolore veniam",
+    "laboris consectetur esse tempor esse magna deserunt",
+    "Lorem id aliquip quis Lorem aliqua sint in eiusmod dolore occaecat pariatur tempor. Minim ex ut eiusmod eiusmod eiusmod mollit est labore sunt. Excepteur fugiat sit duis cupidatat commodo amet fugiat est occaecat labore nostrud ut et tempor aliqua. Deserunt laborum pariatur laborum minim et ex do ea fugiat. Reprehenderit eiusmod fugiat amet aute excepteur aute fugiat cupidatat labore officia eiusmod sunt adipisicing duis eu.",
+    "magna ex aliquip nostrud",
+    "fugiat",
+    "Laboris aute commodo qui amet elit mollit irure",
+    "voluptate",
+    "Irure do reprehenderit minim enim consequat eiusmod nisi. Irure sit pariatur ut est exercitation eu commodo minim exercitation sunt sint aute culpa ut esse.",
+    "irure",
+    "In sit consectetur sit mollit minim fugiat minim magna veniam. Nostrud esse consectetur laborum sunt nulla eiusmod ad et est est esse cillum occaecat et fugiat. Et sit laborum laborum anim consectetur dolore incididunt ullamco enim nulla Lorem laboris magna mollit deserunt. Veniam cupidatat amet anim aliquip nostrud id.",
+    "aliquip",
+    "Laborum ut amet in aliquip veniam do. Adipisicing ut reprehenderit ut sint laboris. Lorem laboris elit non Lorem proident aliquip sit enim non incididunt. Irure aliquip consequat aute excepteur quis.",
+  ];
 
-  const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-      max: 8,
-      min: 4,
-    },
-    wordsPerSentence: {
-      max: 16,
-      min: 4,
-    },
-  });
+  // const [state, setState] = useState(false);
+
+  // const [tt, setTT] = useState(false);
 
   useLayoutEffect(() => {
     var cursorWidth = 40;
 
     if (document) {
-      TimelinePart2();
+      // TimelinePart2();
+      // mouse.current=document.getElementById("#mousemove")
 
       const setX = gsap.quickTo("#mousemove", "x", {
         duration: 0.5,
@@ -46,39 +53,67 @@ const Home = () => {
       //   ease: "power2",
       // });
 
-      const ChangeeOut = gsap.to(".aa", {
-        duration: 0.5,
-        scale: 1,
-        ease: "power2",
-      });
+      // const ChangeeOut = gsap.to(".aa", {
+      //   duration: 0.5,
+      //   scale: 1,
+      //   ease: "power2",
+      // });
 
       document.addEventListener("pointermove", (e) => {
         setX(e.clientX - cursorWidth / 2);
         setY(e.clientY - cursorWidth / 2);
       });
 
-      document.getElementById("menu").addEventListener("pointerenter", (e) => {
-        // console.log(e.target)
-        mouse.current.classList.add("aa");
-      });
+      // document.addEventListener("scroll", (e) => {
+      //   console.log(window.pageYOffset)
+      //   scrolll.current=window.pageYOffset
+      //   var xx=document.getElementById("#mousemove").
+      //   // var clientX = pageX- document.documentElement.scrollLeft;
+      //   // var clientY = pageY- document.documentElement.scrollTop;
+      //   setX(clientX - cursorWidth / 2);
+      //   setY(clientY - cursorWidth / 2);
+      // });
 
-      document.getElementById("menu").addEventListener("pointerout", (e) => {
-        // console.log(e)
-        mouse.current.classList.remove("aa");
-      });
+      // document.getElementById("menu").addEventListener("pointerout", (e) => {
+      //   // console.log(e)
+      //   // mouse.current.classList.remove("aa");
+      //   // caca.current=false;
+      //   setTT(false);
+      // });
     }
   }, []);
+
+  useEffect(() => {
+    document.getElementById("menu").addEventListener("pointerenter", (e) => {
+      gsap.to("#mousemove", {
+        backgroundColor: "rgba(0,0,0,0)",
+        height: "50px",
+        width: "50px",
+        borderColor:"red",
+        borderWidth:"5px"
+      });
+    });
+
+    document.getElementById("menu").addEventListener("pointerleave", (e) => {
+      // gsap.to("#mousemove", {
+      //   backgroundColor: "rgba(0,0,0,0.5)",
+      //   height: "40px",
+      //   width: "40px",
+      // });
+    });
+  });
 
   return (
     <>
       <ParralaxBackground />
-      <div ref={mouse} id="mousemove"></div>
+
       <div className="overflow-hidden">
+        <div ref={mouse} id="mousemove"></div>
         <header
           id="header"
           className="shadow bg-white w-100 h-15 justify-content-between position-fixed top-0 left-0 d-flex flex-row"
         >
-          <img className="ps-4 m-2" src="title.svg" />
+          <img className="ps-4 m-2" src="/siteWeb1/title.svg" />
           <nav className="w-20 h-100 d-flex flex-row justify-content-center align-items-center">
             <div
               id="contact"
@@ -99,25 +134,49 @@ const Home = () => {
             <div className="container mx-auto d-flex flex-column">
               <div className="d-flex flex-row row">
                 <div className="col col-8">
-                  <h4>{lorem.generateWords(4)}</h4>
+                  <h4>{textte[0]}</h4>
                   <p className="title">
                     {/* Spécialistes en développement de solutions digitales sur
                     mesure */}
-                    {lorem.generateWords(7)}
+                    {textte[1]}
                   </p>
                   {/* Création de site Internet, développement d'outils digitaux et
                   d'applications mobiles, nous accompagnons les professionnels
                   qui désirent gagner en visibilité, en productivité, et en
                   efficacité. Découvrez nos services */}
-                  {lorem.generateParagraphs(1)}
+                  {textte[2]}
                 </div>
-                <div className="col col-4 mx-auto d-none d-lg-block">
-                  <img className="h-75" src="/siteWeb1/main.svg" />
+                <div
+                  className="col col-4 mx-auto d-none d-lg-block"
+                  style={{
+                    zIndex: "10",
+                  }}
+                >
+                  <img
+                    className="h-75"
+                    src="siteWeb1/main.svg"
+                    style={{
+                      zIndex: "20",
+                      position: "relative",
+                    }}
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div className="part2 bg-grey position-relative">
+            <img
+              src="/siteWeb1/darkBrownSquare.png"
+              height={"50px"}
+              width={"50px"}
+              className="position-absolute"
+              style={{
+                transform: "rotate(35deg) scale(1)",
+                left: "28vh",
+                top: "4vh",
+                zIndex: "20",
+              }}
+            />
             <div className="jauge w-5 h-100 my-2 position-absolute flex-column">
               <div className="bg-yellow p-1 m-1 row rounded h-25 w-100"></div>
               <div className="bg-yellow p-1 m-1  rounded row h-25 w-100"></div>
@@ -126,7 +185,7 @@ const Home = () => {
             </div>
             <div className="container w-100 mx-auto d-flex flex-column">
               <div className="row">
-                <h1 className="ps-4">{lorem.generateWords(4)}</h1>
+                <h1 className="ps-4">{textte[3]}</h1>
               </div>
               <div className="row">
                 <div className="col-12 col-lg-6 card1 cardd">
@@ -137,10 +196,10 @@ const Home = () => {
                         src="siteWeb1/logo/budget.png"
                       />
 
-                      <h2 className="ps-3 mb-4">{lorem.generateWords(1)}</h2>
+                      <h2 className="ps-3 mb-4">{textte[4]}</h2>
                     </div>
 
-                    <h6>{lorem.generateSentences(1)}</h6>
+                    <h6>{textte[5]}</h6>
                   </div>
                 </div>
                 <div className=" col-12 col-lg-6 card2 cardd">
@@ -151,13 +210,13 @@ const Home = () => {
                         src="siteWeb1/logo/report.png"
                       />
 
-                      <h2 className="ps-3 mb-4">{lorem.generateWords(1)}</h2>
+                      <h2 className="ps-3 mb-4">{textte[6]}</h2>
                     </div>
 
-                    <h6>{lorem.generateSentences(2)}</h6>
+                    <h6>{textte[7]}</h6>
                   </div>
                 </div>
-                <div className=" col-12 col-lg-6 card3 cardd">
+                <div className="col-12 col-lg-6 card3 cardd">
                   <div className="shadow p-3 m-2 bg-white rounded w-100 h-100">
                     <div className="d-flex flex-row w-100">
                       <img
@@ -165,9 +224,9 @@ const Home = () => {
                         src="siteWeb1/logo/business.png"
                       />
 
-                      <h2 className="ps-3 mb-4">{lorem.generateWords(1)}</h2>
+                      <h2 className="ps-3 mb-4">{textte[8]}</h2>
                     </div>
-                    <h6>{lorem.generateSentences(4)}</h6>
+                    <h6>{textte[9]}</h6>
                   </div>
                 </div>
                 <div className=" col-12 col-lg-6 card4 cardd">
@@ -175,12 +234,12 @@ const Home = () => {
                     <div className="d-flex flex-row w-100">
                       <img
                         className="imglogo mt-2"
-                        src="siteWeb1/logo/analytics.png"
+                        src="/siteWeb1/logo/analytics.png"
                       />
 
-                      <h2 className="ps-3 mb-4">{lorem.generateWords(1)}</h2>
+                      <h2 className="ps-3 mb-4">{textte[10]}</h2>
                     </div>
-                    <h6>{lorem.generateSentences(4)}</h6>
+                    <h6>{textte[11]}</h6>
                   </div>
                 </div>
               </div>
