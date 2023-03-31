@@ -1,5 +1,5 @@
-import '../styles/globalsSiteWeb1.css'
-import '../styles/persoSiteWeb1.css'
+import '../styles/globals.css'
+import '../styles/perso.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from 'next/app'
 

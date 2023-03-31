@@ -34,6 +34,18 @@ export default function ParralaxBackground() {
 
   return (
     <>
+    <div
+    style={{
+      // transform: "rotate(5deg) scale(3)",
+      // right: "-5vh",
+      // bottom: "20vh",
+      // zIndex: "9",
+      width:"100%",
+      // animation
+      // DelayNode
+      // animated
+    }}
+    >
       <img
         ref={ref}
         src="/siteWeb1/brownCircle.png"
@@ -78,7 +90,7 @@ export default function ParralaxBackground() {
       /> */}
       <img
         ref={ref3}
-        src="/siteWeb1/darkBrownSquare.png"
+        src="/siteWeb1/brownCircle.png"
         height={"50px"}
         width={"50px"}
         className="position-absolute kibouge"
@@ -110,7 +122,7 @@ export default function ParralaxBackground() {
         src="/siteWeb1/darkBrownSquare.png"
         height={"50px"}
         width={"50px"}
-        className="position-absolute kibouge"
+        className="position-absolute kibouge d-none d-xxl-block"
         data-speed="0.9"
         style={{
           transform: "rotate(35deg) scale(3)",
@@ -134,6 +146,7 @@ export default function ParralaxBackground() {
           zIndex: "9",
         }}
       />
+      </div>
     </>
   );
 }
@@ -192,7 +205,7 @@ export function TimelinePart2() {
     },
     {
       opacity: 1,
-      // backgroundColor:"red",
+      backgroundColor:"rgb(174,133,7)",
       duration: "0.5",
     },
     ">0.5"
@@ -205,8 +218,8 @@ export function TimelinePart2() {
     },
     {
       opacity: 1,
-      backgroundColor: "red",
-      duration: "1",
+      backgroundColor: "rgb(174,133,7)",
+      duration: "0.5",
     },
     ">0.5"
   );
@@ -218,8 +231,8 @@ export function TimelinePart2() {
     },
     {
       opacity: 1,
-      backgroundColor: "red",
-      duration: "3",
+      backgroundColor: "rgb(174,133,7)",
+      duration: "0.5",
     },
     ">0.5"
   );
@@ -231,7 +244,8 @@ export function TimelinePart2() {
     },
     {
       opacity: 1,
-      backgroundColor: "red",
+      backgroundColor: "rgb(174,133,7)",
+      duration: "0.5",
     },
     ">0.5"
   );

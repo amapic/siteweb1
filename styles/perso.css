@@ -19,29 +19,28 @@
   /* bottom:10px; */
 }
 
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      background-color:rgb(255,127,0);
-  }
 
-  to {
-      opacity: 1;
-      background-color:rgb(255,255,0);
-  }
-}
 
-/* .animated {
+.animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
+@keyframes fadeIn{
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-} */
+}
 
 
 .bg-orange {
@@ -59,6 +58,13 @@
 .bg-yellow {
   background-color: var(--color-yellow);
 }
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+
+
 
 @media only screen and (min-width: 992px) {
   .container {
@@ -100,7 +106,7 @@ header{
 #content{
   /* height:200vh; */
   z-index: 1;
-  position: relative;
+  /* position: relative; */
 }
 
 #mousemove{
@@ -123,7 +129,8 @@ header{
 } */
 
 .part1{
-  height: 60vh;
+  margin-top: 30vh;
+  height: 70vh;
 }
 
 
@@ -201,14 +208,14 @@ header{
   }
 }
 
-@media only screen and (max-width: 1400px)
+@media only screen and (max-width: 1500px)
 {
   .jauge{
     display:none;
   }
 
 }
-@media only screen and (min-width: 1400px)
+@media only screen and (min-width: 1500px)
 {
 
   .jauge{
@@ -216,11 +223,22 @@ header{
     width:75px;
     left:calc(((100vw - 1320px)/2 - 75px)/2);
     bottom:10px;
+    height:90%;
 
   }
 
 }
 
+/* @media screen {
+  
+}(min-width: 1500px){
+  position:fixed
+} */
+
+body::-webkit-scrollbar-thumb {
+  background: #f00;
+  height:10%;
+}
 
 
 

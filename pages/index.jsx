@@ -4,12 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import ParralaxBackground, {
   TimelinePart2,
-} from "../siteWeb1/ParralaxBackground";
-import Part2 from "../siteWeb1/Part2";
+} from "../components/ParralaxBackground";
 const Home = () => {
   const mouse = useRef(null);
-  // const caca = useRef(false);
-  // const scrolll = useRef(0);
 
   const textte = [
     "aliqua id dolore veniam",
@@ -24,17 +21,14 @@ const Home = () => {
     "In sit consectetur sit mollit minim fugiat minim magna veniam. Nostrud esse consectetur laborum sunt nulla eiusmod ad et est est esse cillum occaecat et fugiat. Et sit laborum laborum anim consectetur dolore incididunt ullamco enim nulla Lorem laboris magna mollit deserunt. Veniam cupidatat amet anim aliquip nostrud id.",
     "aliquip",
     "Laborum ut amet in aliquip veniam do. Adipisicing ut reprehenderit ut sint laboris. Lorem laboris elit non Lorem proident aliquip sit enim non incididunt. Irure aliquip consequat aute excepteur quis.",
+    "Nous contacter"
   ];
-
-  // const [state, setState] = useState(false);
-
-  // const [tt, setTT] = useState(false);
 
   useLayoutEffect(() => {
     var cursorWidth = 40;
 
     if (document) {
-      // TimelinePart2();
+      TimelinePart2();
       // mouse.current=document.getElementById("#mousemove")
 
       const setX = gsap.quickTo("#mousemove", "x", {
@@ -63,35 +57,18 @@ const Home = () => {
         setX(e.clientX - cursorWidth / 2);
         setY(e.clientY - cursorWidth / 2);
       });
-
-      // document.addEventListener("scroll", (e) => {
-      //   console.log(window.pageYOffset)
-      //   scrolll.current=window.pageYOffset
-      //   var xx=document.getElementById("#mousemove").
-      //   // var clientX = pageX- document.documentElement.scrollLeft;
-      //   // var clientY = pageY- document.documentElement.scrollTop;
-      //   setX(clientX - cursorWidth / 2);
-      //   setY(clientY - cursorWidth / 2);
-      // });
-
-      // document.getElementById("menu").addEventListener("pointerout", (e) => {
-      //   // console.log(e)
-      //   // mouse.current.classList.remove("aa");
-      //   // caca.current=false;
-      //   setTT(false);
-      // });
     }
   }, []);
 
   useEffect(() => {
     document.getElementById("menu").addEventListener("pointerenter", (e) => {
-      gsap.to("#mousemove", {
-        backgroundColor: "rgba(0,0,0,0)",
-        height: "50px",
-        width: "50px",
-        borderColor:"red",
-        borderWidth:"5px"
-      });
+      // gsap.to("#mousemove", {
+      //   backgroundColor: "rgba(0,0,0,0)",
+      //   height: "50px",
+      //   width: "50px",
+      //   borderColor: "red",
+      //   borderWidth: "5px",
+      // });
     });
 
     document.getElementById("menu").addEventListener("pointerleave", (e) => {
@@ -130,31 +107,24 @@ const Home = () => {
           </nav>
         </header>
         <div id="content" className="parralax">
-          <div className="part1">
+          <div className="part1 ">
             <div className="container mx-auto d-flex flex-column">
-              <div className="d-flex flex-row row">
-                <div className="col col-8">
-                  <h4>{textte[0]}</h4>
-                  <p className="title">
-                    {/* Spécialistes en développement de solutions digitales sur
-                    mesure */}
-                    {textte[1]}
-                  </p>
-                  {/* Création de site Internet, développement d'outils digitaux et
-                  d'applications mobiles, nous accompagnons les professionnels
-                  qui désirent gagner en visibilité, en productivité, et en
-                  efficacité. Découvrez nos services */}
+              <div className="d-flex flex-row row ">
+                <div className="col col-12 col-xl-8">
+                  <h4
+                  className="title text-justify"
+                  >{textte[0]}</h4><p className="title text-justify">{textte[1]}</p>
                   {textte[2]}
                 </div>
                 <div
-                  className="col col-4 mx-auto d-none d-lg-block"
+                  className="col col-4 mx-auto d-none d-xl-block"
                   style={{
                     zIndex: "10",
                   }}
                 >
                   <img
                     className="h-75"
-                    src="siteWeb1/main.svg"
+                    src="/siteWeb1/main.svg"
                     style={{
                       zIndex: "20",
                       position: "relative",
@@ -162,22 +132,15 @@ const Home = () => {
                   />
                 </div>
               </div>
+              <div
+              className="w-50 mx-auto p-3 bg-blue rounded h-25 text-center text-white"
+              >
+                <h3>{textte[3]}</h3>
+              </div>
             </div>
           </div>
           <div className="part2 bg-grey position-relative">
-            <img
-              src="/siteWeb1/darkBrownSquare.png"
-              height={"50px"}
-              width={"50px"}
-              className="position-absolute"
-              style={{
-                transform: "rotate(35deg) scale(1)",
-                left: "28vh",
-                top: "4vh",
-                zIndex: "20",
-              }}
-            />
-            <div className="jauge w-5 h-100 my-2 position-absolute flex-column">
+            <div className="jauge my-2 position-absolute flex-column">
               <div className="bg-yellow p-1 m-1 row rounded h-25 w-100"></div>
               <div className="bg-yellow p-1 m-1  rounded row h-25 w-100"></div>
               <div className="bg-yellow p-1 m-1  rounded row h-25 w-100"></div>
@@ -186,6 +149,20 @@ const Home = () => {
             <div className="container w-100 mx-auto d-flex flex-column">
               <div className="row">
                 <h1 className="ps-4">{textte[3]}</h1>
+                <div>
+                  <img
+                    src="/siteWeb1/darkBrownSquare.png"
+                    height={"50px"}
+                    width={"50px"}
+                    className="position-absolute"
+                    style={{
+                      transform: "rotate(35deg) scale(1)",
+                      left: "0vh",
+                      top: "-40px",
+                      zIndex: "20",
+                    }}
+                  />
+                </div>
               </div>
               <div className="row">
                 <div className="col-12 col-lg-6 card1 cardd">
@@ -193,7 +170,7 @@ const Home = () => {
                     <div className="d-flex flex-row w-100">
                       <img
                         className="imglogo mt-2"
-                        src="siteWeb1/logo/budget.png"
+                        src="/siteWeb1/budget.png"
                       />
 
                       <h2 className="ps-3 mb-4">{textte[4]}</h2>
@@ -207,7 +184,7 @@ const Home = () => {
                     <div className="d-flex flex-row w-100">
                       <img
                         className="imglogo mt-2"
-                        src="siteWeb1/logo/report.png"
+                        src="/siteWeb1/report.png"
                       />
 
                       <h2 className="ps-3 mb-4">{textte[6]}</h2>
@@ -221,7 +198,7 @@ const Home = () => {
                     <div className="d-flex flex-row w-100">
                       <img
                         className="imglogo mt-2"
-                        src="siteWeb1/logo/business.png"
+                        src="/siteWeb1/business.png"
                       />
 
                       <h2 className="ps-3 mb-4">{textte[8]}</h2>
@@ -234,7 +211,7 @@ const Home = () => {
                     <div className="d-flex flex-row w-100">
                       <img
                         className="imglogo mt-2"
-                        src="/siteWeb1/logo/analytics.png"
+                        src="/siteWeb1/analytics.png"
                       />
 
                       <h2 className="ps-3 mb-4">{textte[10]}</h2>
