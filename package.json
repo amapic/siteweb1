@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export -o siteWeb1",
     "start": "next start",
     "lint": "next lint"
   },
@@ -17,10 +17,12 @@
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
     "gsap": "^3.11.4",
-    "lorem-ipsum": "^2.0.8",
     "next": "13.0.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "purify-css": "^1.2.5"
   }
 }

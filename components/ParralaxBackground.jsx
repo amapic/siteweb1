@@ -34,118 +34,124 @@ export default function ParralaxBackground() {
 
   return (
     <>
-    <div
-    style={{
-      // transform: "rotate(5deg) scale(3)",
-      // right: "-5vh",
-      // bottom: "20vh",
-      // zIndex: "9",
-      width:"100%",
-      // animation
-      // DelayNode
-      // animated
-    }}
-    >
-      <img
-        ref={ref}
-        src="/siteWeb1/brownCircle.png"
-        height={"50px"}
-        width={"50px"}
-        className="position-absolute kibouge"
+      <div
+        id="gg"
+        className="position-absolute top-0 left-0 h-100 w-100"
         style={{
-          transform: "scale(2)",
-          left: "10vh",
-          top: "25vh",
-          zIndex: "9",
+          zIndex: "auto",
         }}
-        data-speed="0.6"
-      />
-      <img
-        ref={ref2}
-        src="/siteWeb1/brownSquare.png"
-        height={"50px"}
-        width={"50px"}
-        className="position-absolute kibouge"
-        data-speed="0.6"
-        style={{
-          transform: "rotate(45deg) scale(2)",
-          right: "10vh",
-          top: "20vh",
-          zIndex: "9",
-        }}
-      />
-      {/* <img
-        ref={ref}
-        src="/siteWeb1/brownCircle.png"
-        height={"50px"}
-        width={"50px"}
-        className="position-fixed kibouge"
-        style={{
-          transform: "scale(0.5)",
-          right: "20vh",
-          top:"15vh",
-          zIndex:"100"
-        }}
-        data-speed="0.6"
-      /> */}
-      <img
-        ref={ref3}
-        src="/siteWeb1/brownCircle.png"
-        height={"50px"}
-        width={"50px"}
-        className="position-absolute kibouge"
-        data-speed="0.9"
-        style={{
-          transform: "rotate(5deg) scale(3)",
-          right: "-5vh",
-          bottom: "20vh",
-          zIndex: "9",
-        }}
-      />
-      <img
-        // ref={ref3}
-        src="/siteWeb1/darkBrownSquare.png"
-        height={"50px"}
-        width={"50px"}
-        className="position-absolute kibouge"
-        data-speed="0.3"
-        style={{
-          transform: "rotate(5deg) scale(1)",
-          right: "50vh",
-          top: "10vh",
-          zIndex: "9",
-        }}
-      />
+      >
+        <img
+          ref={ref}
+          src="/siteWeb1/brownCircle.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute kibouge d-none d-sm-block fadeIn animated"
+          style={{
+            transform: "scale(0.5)",
+            left: "1vw",
+            top: "25vh",
+            zIndex: "none",
+          }}
+          data-speed="0.6"
+        />
+        <img
+          ref={ref2}
+          src="/siteWeb1/brownSquare.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute d-none d-sm-block kibouge fadeIn animated"
+          data-speed="0.6"
+          style={{
+            transform: "rotate(45deg) scale(1)",
+            left: "96vw",
+            top: "50vh",
+            zIndex: "auto",
+          }}
+        />
 
-      <img
-        // ref={ref3}
-        src="/siteWeb1/darkBrownSquare.png"
-        height={"50px"}
-        width={"50px"}
-        className="position-absolute kibouge d-none d-xxl-block"
-        data-speed="0.9"
-        style={{
-          transform: "rotate(35deg) scale(3)",
-          right: "0vh",
-          top: "140vh",
-          zIndex: "9",
-        }}
-      />
+        <img
+          src="/siteWeb1/darkBrownSquare.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute kibouge d-none d-sm-block fadeIn animated"
+          data-speed="0.3"
+          style={{
+            transform: "rotate(5deg) scale(1)",
+            left: "90vw",
+            top: "25vh",
+          }}
+        />
 
-      <img
-        // ref={ref3}
-        src="/siteWeb1/darkBrownSquare.png"
-        height={"50px"}
-        width={"50px"}
-        className="position-absolute kibouge"
-        data-speed="0.3"
-        style={{
-          transform: "rotate(10deg) scale(0.5)",
-          left: "5vh",
-          top: "80vh",
-          zIndex: "9",
-        }}
-      />
+        <img
+          src="/siteWeb1/darkBrownSquare.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute kibouge d-block fadeIn animated"
+          data-speed="0.3"
+          style={{
+            transform: "rotate(45deg) scale(0.5)",
+            left: "calc(50vw - 200px)",
+            top: "20vh",
+            zIndex: "9",
+          }}
+        />
+
+        <img
+          src="/siteWeb1/brownCircle.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute kibouge d-block fadeIn animated"
+          data-speed="0.3"
+          style={{
+            transform: "scale(0.5)",
+            left: "calc(50vw + 100px)",
+            top: "20vh",
+            zIndex: "9",
+          }}
+        />
+
+        <img
+          src="/siteWeb1/darkBrownSquare.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute kibouge d-none d-xxl-block fadeIn animated"
+          data-speed="0.9"
+          style={{
+            transform: "rotate(35deg) scale(1)",
+            left: "95vw",
+            top: "140vh",
+            zIndex: "9",
+          }}
+        />
+
+        <img
+          src="/siteWeb1/redSquare.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute d-none d-sm-block kibouge fadeIn animated"
+          data-speed="0.3"
+          style={{
+            transform: "rotate(10deg) scale(1)",
+            left: "5vw",
+            top: "90vh",
+            // zIndex: "9",
+          }}
+        />
+
+        {/* <img
+          src="/siteWeb1/darkBrownSquare.png"
+          height={"50px"}
+          width={"50px"}
+          className="position-absolute d-block d-md-none kibouge fadeIn animated"
+          data-speed="0.3"
+          style={{
+            transform: "rotate(-5deg) scale(1)",
+            left: "45vw",
+            top: "95vh",
+            // zIndex: "9",
+          }}
+        /> */}
       </div>
     </>
   );
@@ -205,7 +211,7 @@ export function TimelinePart2() {
     },
     {
       opacity: 1,
-      backgroundColor:"rgb(174,133,7)",
+      backgroundColor: "rgb(174,133,7)",
       duration: "0.5",
     },
     ">0.5"
@@ -306,3 +312,61 @@ export function TimelinePart2() {
   );
 }
 // }
+
+export function TimelinePartWobblyText() {
+  var kaka = 3;
+
+  function Rrepeat(localkaka) {
+    kaka = localkaka - 1;
+    // alert(kaka);
+  }
+
+  const tl = gsap.timeline({
+    repeat: 2,
+    repeatDelay: 0,
+    onRepeat: Rrepeat(kaka),
+    repeatRefresh: true,
+  });
+
+  tl.to(
+    ".bb",
+    {
+      rotationZ: kaka,
+      duration: "0.2",
+      ease: "power2",
+    },
+    "0"
+  );
+
+  tl.to(
+    ".bb",
+    {
+      rotationZ: "0",
+      duration: "0.2",
+      ease: "power2",
+    },
+    ">"
+  );
+
+  tl.to(
+    ".bb",
+    {
+      rotationZ: -kaka,
+      duration: "0.2",
+      ease: "power2",
+    },
+    ">"
+  );
+
+  tl.to(
+    ".bb",
+    {
+      rotationZ: "0",
+      duration: "0.2",
+      ease: "power2",
+    },
+    ">"
+  );
+
+  return tl;
+}
