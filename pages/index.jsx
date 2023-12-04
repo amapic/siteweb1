@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
+import dynamic from 'next/dynamic'
 import gsap from "gsap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Head from "next/head";
 import ParralaxBackground, {
   TimelinePart2,
   TimelinePartWobblyText,
-} from "../components/ParralaxBackground";
+} from "../components_siteWeb1/ParralaxBackground";
 
-import Navv, { Carousel } from "../components/Navv";
+import Navv, { Carousel } from "../components_siteWeb1/Navv";
 
-import purify from "purify-css"
+// import purify from "purify-css"
 
 const Home = () => {
   const mouse = useRef(null);
@@ -30,26 +31,12 @@ const Home = () => {
     "Nous contacter",
   ];
 
-  useEffect(() => {
+  React.useEffect(() => {
     var cursorWidth = 40;
-
-    var content = ["**/components/*.js"];
-    var css = ["**/styles/*.css"];
-
-    var options = {
-      // Will write purified CSS to this file.
-      output: "./purified.css",
-    };
-
-    purify(content, css, options);
 
     if (document) {
       TimelinePart2();
-      // TimelinePartWobblyText();
 
-      // alert(window.innerWidth)
-      // alert(outer.innerWidth)
-      // mouse.current=document.getElementById("#mousemove")
 
       const setX = gsap.quickTo("#mousemove", "x", {
         duration: 0.5,
@@ -61,26 +48,7 @@ const Home = () => {
         ease: "power2",
       });
 
-      // gsap.to(".bb", {
-      //   // duration: 0.5,
-      //   ease: "power2",
-      //   rotationZ:3.14,
-      //   duration:3
-      // });
-
-      // {rotationZ:0.01}
-
-      // const ChangeeEnter = gsap.to(".aa", {
-      //   duration: 0.5,
-      //   scale: 2,
-      //   ease: "power2",
-      // });
-
-      // const ChangeeOut = gsap.to(".aa", {
-      //   duration: 0.5,
-      //   scale: 1,
-      //   ease: "power2",
-      // });
+      
 
       document.addEventListener("pointermove", (e) => {
         setX(e.clientX - cursorWidth / 2);
@@ -89,32 +57,9 @@ const Home = () => {
     }
   }, []);
 
-  useEffect(() => {
-    // document.getElementById("menu").addEventListener("pointerenter", (e) => {
-    //   gsap.to("#mousemove .cercle1", {
-    //     backgroundColor: "rgba(0,0,0,1)",
-    //     height: "50px",
-    //     width: "50px",
-    //     borderColor: "red",
-    //     borderWidth: "5px",
-    //   });
-    //   // gsap.to("#mousemove .cercle2", {
-    //   //   backgroundColor: "rgba(100,0,0,1)",
-    //   //   height: "50px",
-    //   //   width: "50px",
-    //   //   // borderColor: "red",
-    //   //   borderWidth: "2px",
-    //   //   borderRadius: "50%"
-    //   // });
-    // });
-    // document.getElementById("menu").addEventListener("pointerleave", (e) => {
-    //   gsap.to("#mousemove", {
-    //     backgroundColor: "rgba(0,0,0,0.5)",
-    //     height: "40px",
-    //     width: "40px",
-    //   });
-    // });
-  });
+  // useEffect(() => {
+
+  // });
 
   return (
     <>
@@ -122,8 +67,8 @@ const Home = () => {
         <title>Book A.PICHAT</title>
         <link rel="shortcut icon" href="/siteWeb1/favicon.ico" />
       </Head>
-      <Navv />
-      <Carousel />
+      {/* <Navv /> */}
+      {/* <Carousel /> */}
       <div ref={mouse} id="mousemove">
         <div id="cercle1"></div>
         <div id="cercle2"></div>
@@ -152,12 +97,14 @@ const Home = () => {
               <div
                 id="contact"
                 className="w-100 h-100 d-flex justify-content-center align-items-center d-none d-sm-flex"
+                role="contact"
               >
                 Contact
               </div>
               <div
                 id="menu"
                 className="bg-brown w-100 h-100 text-center d-inline align-middle"
+                role="menu"
               >
                 Menu
               </div>
@@ -165,9 +112,6 @@ const Home = () => {
           </div>
         </div>
       </header>
-      {/* <body
-        className="w-100"
-        > */}
 
       <div id="content" className="parralax">
         <ParralaxBackground />
@@ -205,12 +149,7 @@ const Home = () => {
           </div>
         </div>
         <div className="part2 bg-grey pb-5">
-          {/* <div className="jauge my-2 position-absolute flex-column">
-              <div className="bg-yellow p-1 m-1 row rounded h-25 w-100"></div>
-              <div className="bg-yellow p-1 m-1  rounded row h-25 w-100"></div>
-              <div className="bg-yellow p-1 m-1  rounded row h-25 w-100"></div>
-              <div className="bg-yellow p-1 m-1  rounded row h-25 w-100"></div>
-            </div> */}
+
           <div className="container w-100 mx-auto d-flex flex-column">
             <div className="row">
               <h1 className="ps-4">{textte[3]}</h1>
@@ -286,4 +225,8 @@ const Home = () => {
   );
 };
 
-export default Home;
+// export default Home;
+
+export default dynamic(() => Promise.resolve(Home), {
+  ssr: false
+})
