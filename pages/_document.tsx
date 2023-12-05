@@ -2,17 +2,27 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="en">
-      <Head >
-      <link rel="shortcut icon" href="/siteWeb1/static/favicon.ico" />
-      {/* <title>Portfolio A.PICHAT</title> */}
-      </Head>
-      <body
-      
-      >
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+
+      <Html>
+        <Head>
+          <!-- Google Tag Manager -->
+          <script defer src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-LTCXHF5790');
+
+    </script>
+          <!-- End Google Tag Manager -->
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  
 }
+
