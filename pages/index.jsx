@@ -66,6 +66,7 @@ const Home = () => {
       <Head>
         <title>Site web développé avec React - PortFolio Amaury PICHAT</title>
         <link rel="shortcut icon" href="/siteWeb1/favicon.ico" />
+       
       </Head>
       {/* <Navv /> */}
       {/* <Carousel /> */}
