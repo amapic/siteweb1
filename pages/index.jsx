@@ -63,17 +63,18 @@ const Home = () => {
       <Head>
         <title>Site web développé avec React - PortFolio Amaury PICHAT</title>
         <link rel="shortcut icon" href="/siteWeb1/favicon.ico" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script>
+        
+      </Head>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script>
         <Script id="google-analytics">
           {`
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments) }
-        gtag("js", new Date());
+        gtag('js', new Date());
 
-        gtag("config", "G-LTCXHF5790");
+        gtag('config', 'G-LTCXHF5790');
         `}
         </Script>
-      </Head>
       {/* <Navv /> */}
       {/* <Carousel /> */}
       <div ref={mouse} id="mousemove">
