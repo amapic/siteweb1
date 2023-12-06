@@ -70,9 +70,9 @@ const Home = () => {
           {`
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date());
+        gtag(&apos;js&apos;, new Date());
 
-        gtag('config', 'G-LTCXHF5790');
+        gtag('&apos;config&apos;, &apos;G-LTCXHF5790&apos;);
         `}
         </Script>
       {/* <Navv /> */}
