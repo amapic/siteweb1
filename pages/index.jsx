@@ -7,7 +7,7 @@ import ParralaxBackground, {
   TimelinePart2,
   TimelinePartWobblyText,
 } from "../components_siteWeb1/ParralaxBackground";
-import Script from "next/script";
+// import Script from "next/script";
 import Navv, { Carousel } from "../components_siteWeb1/Navv";
 
 // import purify from "purify-css"
