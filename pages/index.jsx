@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import gsap from "gsap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Head from "next/head";
@@ -7,7 +7,7 @@ import ParralaxBackground, {
   TimelinePart2,
   TimelinePartWobblyText,
 } from "../components_siteWeb1/ParralaxBackground";
-import Script from 'next/script'
+import Script from "next/script";
 import Navv, { Carousel } from "../components_siteWeb1/Navv";
 
 // import purify from "purify-css"
@@ -37,7 +37,6 @@ const Home = () => {
     if (document) {
       TimelinePart2();
 
-
       const setX = gsap.quickTo("#mousemove", "x", {
         duration: 0.5,
         ease: "power2",
@@ -47,8 +46,6 @@ const Home = () => {
         duration: 0.5,
         ease: "power2",
       });
-
-      
 
       document.addEventListener("pointermove", (e) => {
         setX(e.clientX - cursorWidth / 2);
@@ -66,16 +63,16 @@ const Home = () => {
       <Head>
         <title>Site web développé avec React - PortFolio Amaury PICHAT</title>
         <link rel="shortcut icon" href="/siteWeb1/favicon.ico" />
-        <Script  src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script>
-    <Script >
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script>
+        <Script id="google-analytics">
+          {`
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments) }
         gtag("js", new Date());
 
         gtag("config", "G-LTCXHF5790");
-
-    </Script>
-       
+        `}
+        </Script>
       </Head>
       {/* <Navv /> */}
       {/* <Carousel /> */}
@@ -159,7 +156,6 @@ const Home = () => {
           </div>
         </div>
         <div className="part2 bg-grey pb-5">
-
           <div className="container w-100 mx-auto d-flex flex-column">
             <div className="row">
               <h1 className="ps-4">{textte[3]}</h1>
@@ -238,5 +234,5 @@ const Home = () => {
 // export default Home;
 
 export default dynamic(() => Promise.resolve(Home), {
-  ssr: false
-})
+  ssr: false,
+});
