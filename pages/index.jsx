@@ -7,7 +7,7 @@ import ParralaxBackground, {
   TimelinePart2,
   TimelinePartWobblyText,
 } from "../components_siteWeb1/ParralaxBackground";
-
+import Script from 'next/script'
 import Navv, { Carousel } from "../components_siteWeb1/Navv";
 
 // import purify from "purify-css"
@@ -66,6 +66,15 @@ const Home = () => {
       <Head>
         <title>Site web développé avec React - PortFolio Amaury PICHAT</title>
         <link rel="shortcut icon" href="/siteWeb1/favicon.ico" />
+        <Script  src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script>
+    <Script >
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments) }
+        gtag('js', new Date());
+
+        gtag('config', 'G-LTCXHF5790');
+
+    </Script>
        
       </Head>
       {/* <Navv /> */}

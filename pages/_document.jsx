@@ -1,20 +1,14 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
+
 export default function Document() {
   return (
 
       <Html>
         <Head>
-        <script defer src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></script>
-    <script defer>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date());
-
-        gtag('config', 'G-LTCXHF5790');
-
-    </script>
-         
+       
+        {/* <Script src="https://example.com/script.js" /> */}
+       
         
         </Head>
         <body>
