@@ -7,9 +7,7 @@ export default function Document() {
       <Html>
         <Head>
        
-        {/* <Script src="https://example.com/script.js" /> */}
-       
-        
+    
         </Head>
         <body>
           <Main />
