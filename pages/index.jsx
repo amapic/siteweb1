@@ -65,16 +65,16 @@ const Home = () => {
         <link rel="shortcut icon" href="/siteWeb1/favicon.ico" />
         
       </Head>
-      {/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script> */}
-        {/* <Script id="google-analytics">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script>
+         <Script id="google-analytics">
           {`
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments) }
-        gtag(js, new Date());
+        gtag('js', new Date());
 
-        gtag(config, G-LTCXHF5790);
+        gtag('config', 'G-LTCXHF5790');
         `}
-        </Script> */}
+        </Script>
       {/* <Navv /> */}
       {/* <Carousel /> */}
       <div ref={mouse} id="mousemove">
