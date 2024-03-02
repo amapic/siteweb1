@@ -8,6 +8,9 @@ const config = {
       transform: {
         '\\.(js|jsx)$': ['babel-jest', { configFile: './babel.config.testing.js' }]
       },
+      eslint: {
+        ignoreDuringBuilds: true,
+      }
   };
   
   module.exports = config;
