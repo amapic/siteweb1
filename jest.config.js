@@ -7,10 +7,10 @@ const config = {
       "testEnvironment": "jsdom",
       transform: {
         '\\.(js|jsx)$': ['babel-jest', { configFile: './babel.config.testing.js' }]
-      },
-      eslint: {
-        ignoreDuringBuilds: true,
       }
+      // eslint: {
+      //   ignoreDuringBuilds: true,
+      // }
   };
   
   module.exports = config;
