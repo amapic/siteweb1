@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o ../../prod/siteWeb1 ",
+    "build": "next build",
     "build2": "next build",
     "start": "next start",
     "test": "jest",
