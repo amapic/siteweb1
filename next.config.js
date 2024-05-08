@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   basePath: "/siteWeb1",
-  output: '../../prod/siteWeb1',
+  output: 'export',
+  distDir:"../../prod/siteWeb1"
   webpack: (config) => {
     config.resolve = {
       ...config.resolve,
