@@ -7,7 +7,7 @@ export default function Document() {
       <Html>
         <Head>
        
-        <link rel="icon" href="/favigcon.ico?v=3" sizes="any" />
+        <link rel="icon" href="/favigcon.ico?v=4" sizes="any" />
         </Head>
         <body>
           <Main />

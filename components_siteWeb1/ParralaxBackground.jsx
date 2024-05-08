@@ -22,11 +22,6 @@ export default function ParralaxBackground() {
         },
       });
 
-      // gsap.utils.toArray(".kibouge").forEach((layer) => {
-      //   const speed = layer.dataset.speed;
-      //   const movement = -(layer.offsetHeight * speed);
-      //   tl.to(layer, { y: movement, ease: "none" }, 0);
-      // });
     });
 
     return () => ctx.revert();
@@ -139,19 +134,7 @@ export default function ParralaxBackground() {
           }}
         />
 
-        {/* <img
-          src="/siteWeb1/darkBrownSquare.png"
-          height={"50px"}
-          width={"50px"}
-          className="position-absolute d-block d-md-none kibouge fadeIn animated"
-          data-speed="0.3"
-          style={{
-            transform: "rotate(-5deg) scale(1)",
-            left: "45vw",
-            top: "95vh",
-            // zIndex: "9",
-          }}
-        /> */}
+    
       </div>
     </>
   );
@@ -194,67 +177,67 @@ export function TimelinePart2() {
     },
   });
 
-  const tlJauge = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".jauge",
-      start: "bottom bottom",
-      end: "bottom bottom",
-      once: true,
+  // const tlJauge = gsap.timeline({
+    // scrollTrigger: {
+      // trigger: ".jauge",
+      // start: "bottom bottom",
+      // end: "bottom bottom",
+      // once: true,
       // markers:true
-    },
-  });
+    // },
+  // });
 
-  tlJauge.fromTo(
-    ".jauge div:nth-child(1)",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      backgroundColor: "rgb(174,133,7)",
-      duration: "0.5",
-    },
-    ">0.5"
-  );
+  // tlJauge.fromTo(
+    // ".jauge div:nth-child(1)",
+    // {
+      // opacity: 0,
+    // },
+    // {
+      // opacity: 1,
+      // backgroundColor: "rgb(174,133,7)",
+      // duration: "0.5",
+    // },
+    // ">0.5"
+  // );
 
-  tlJauge.fromTo(
-    ".jauge div:nth-child(2)",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      backgroundColor: "rgb(174,133,7)",
-      duration: "0.5",
-    },
-    ">0.5"
-  );
+  // tlJauge.fromTo(
+    // ".jauge div:nth-child(2)",
+    // {
+      // opacity: 0,
+    // },
+    // {
+      // opacity: 1,
+      // backgroundColor: "rgb(174,133,7)",
+      // duration: "0.5",
+    // },
+    // ">0.5"
+  // );
 
-  tlJauge.fromTo(
-    ".jauge div:nth-child(3)",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      backgroundColor: "rgb(174,133,7)",
-      duration: "0.5",
-    },
-    ">0.5"
-  );
+  // tlJauge.fromTo(
+    // ".jauge div:nth-child(3)",
+    // {
+      // opacity: 0,
+    // },
+    // {
+      // opacity: 1,
+      // backgroundColor: "rgb(174,133,7)",
+      // duration: "0.5",
+    // },
+    // ">0.5"
+  // );
 
-  tlJauge.fromTo(
-    ".jauge div:nth-child(4)",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      backgroundColor: "rgb(174,133,7)",
-      duration: "0.5",
-    },
-    ">0.5"
-  );
+  // tlJauge.fromTo(
+    // ".jauge div:nth-child(4)",
+    // {
+      // opacity: 0,
+    // },
+    // {
+      // opacity: 1,
+      // backgroundColor: "rgb(174,133,7)",
+      // duration: "0.5",
+    // },
+    // ">0.5"
+  // );
 
   tl.fromTo(
     ".card1 div",

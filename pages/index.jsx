@@ -54,15 +54,13 @@ const Home = () => {
     }
   }, []);
 
-  // useEffect(() => {
 
-  // });
 
   return (
     <>
       <Head>
-        <title>Site web développé avec React - PortFolio Amaury PICHAT</title>
-        <link rel="shortcut icon" href="/siteWeb1/favicon.ico" />
+        <title>Site web Amaury PICHAT</title>
+      
         
       </Head>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-LTCXHF5790"></Script>
@@ -75,8 +73,7 @@ const Home = () => {
         gtag('config', 'G-LTCXHF5790');
         `}
         </Script>
-      {/* <Navv /> */}
-      {/* <Carousel /> */}
+   
       <div ref={mouse} id="mousemove">
         <div id="cercle1"></div>
         <div id="cercle2"></div>
@@ -232,7 +229,6 @@ const Home = () => {
   );
 };
 
-// export default Home;
 
 export default dynamic(() => Promise.resolve(Home), {
   ssr: false,
