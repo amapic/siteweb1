@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Navv() {
+export default function Navv():React.ReactElement {
     return (
       <div
         id="navv"
@@ -53,9 +53,9 @@ export default function Navv() {
   }
 
 export function Carousel() {
-  const [isActive, setIsActive] = useState(1);
+  const [isActive, setIsActive] = useState<number>(1);
 
-  const handleClick = (i) => {
+  const handleClick = (i):void => {
     if (isActive != i) {
       setIsActive(i);
     }

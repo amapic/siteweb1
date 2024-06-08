@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { ReactElement, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ParralaxBackground() {
-  const ref = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
+export default function ParralaxBackground():ReactElement {
+  const ref = useRef<HTMLImageElement>(null);
+  const ref2 = useRef<HTMLImageElement>(null);
+  // const ref3 = useRef(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -299,8 +299,9 @@ export function TimelinePart2() {
 export function TimelinePartWobblyText() {
   var kaka = 3;
 
-  function Rrepeat(localkaka) {
+  function Rrepeat(localkaka):gsap.Callback {
     kaka = localkaka - 1;
+    return null
     // alert(kaka);
   }
 
