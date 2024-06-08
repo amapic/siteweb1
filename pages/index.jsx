@@ -6,9 +6,9 @@ import Head from "next/head";
 import ParralaxBackground, {
   TimelinePart2,
   TimelinePartWobblyText,
-} from "../components_siteWeb1/ParralaxBackground";
+} from "../components/ParralaxBackground";
 import Script from "next/script";
-import Navv, { Carousel } from "../components_siteWeb1/Navv";
+import Navv, { Carousel } from "../components/Navv";
 
 
 const Home = () => {

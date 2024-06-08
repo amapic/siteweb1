@@ -64,7 +64,7 @@
   },
   "next-unused": {
     "include": [
-      "components_siteWeb1",
+      "components",
       "public",
       "./../../"
     ],
