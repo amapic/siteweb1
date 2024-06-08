@@ -16,7 +16,7 @@ const Home = () => {
 
   const textte = [
     "aliqua id dolore veniam",
-    "laboris consectetur esse tempor esse magna deserunt",
+    "llaboris consectetur esse tempor esse magna deserunt",
     "Lorem id aliquip quis Lorem aliqua sint in eiusmod dolore occaecat pariatur tempor. Minim ex ut eiusmod eiusmod eiusmod mollit est labore sunt. Excepteur fugiat sit duis cupidatat commodo amet fugiat est occaecat labore nostrud ut et tempor aliqua. Deserunt laborum pariatur laborum minim et ex do ea fugiat. ",
     "magna ex aliquip nostrud",
     "fugiat",
