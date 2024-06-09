@@ -27,7 +27,7 @@ jobs:
             cd /var/www/html/dev/siteWeb1 # Specify the path to your app directory on the server
             git remote add origin2 https://github.com/amaurypichat/siteWeb1.git
             nvm use 20
-            NODE_OPTIONS=--max_old_space_size=2000
+            NODE_OPTIONS=--max_old_space_size=4000
             git pull origin ts
             npm install --legacy-peer-deps
             npm run build
