@@ -55,7 +55,7 @@ export default function Navv():React.ReactElement {
 export function Carousel() {
   const [isActive, setIsActive] = useState<number>(1);
 
-  const handleClick = (i):void => {
+  const handleClick = (i:number):void => {
     if (isActive != i) {
       setIsActive(i);
     }

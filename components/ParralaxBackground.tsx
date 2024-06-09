@@ -297,25 +297,25 @@ export function TimelinePart2() {
 // }
 
 export function TimelinePartWobblyText() {
-  var kaka = 3;
+  var rotationAngleZ = 3;
 
-  function Rrepeat(localkaka):gsap.Callback {
-    kaka = localkaka - 1;
-    return null
+  function Rrepeat(localrZ:number):undefined {
+    rotationAngleZ = localrZ - 1;
+    // return null
     // alert(kaka);
   }
 
   const tl = gsap.timeline({
     repeat: 2,
     repeatDelay: 0,
-    onRepeat: Rrepeat(kaka),
+    onRepeat: Rrepeat(rotationAngleZ),
     repeatRefresh: true,
   });
 
   tl.to(
     ".bb",
     {
-      rotationZ: kaka,
+      rotationZ: rotationAngleZ,
       duration: "0.2",
       ease: "power2",
     },
@@ -335,7 +335,7 @@ export function TimelinePartWobblyText() {
   tl.to(
     ".bb",
     {
-      rotationZ: -kaka,
+      rotationZ: -rotationAngleZ,
       duration: "0.2",
       ease: "power2",
     },
